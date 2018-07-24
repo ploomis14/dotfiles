@@ -12,6 +12,10 @@ fi
 alias vim="nvim"
 alias vi="nvim"
 
+# tmux
+alias tmls="tmux list-sessions"
+alias tmns="tmux new-session -s"
+
 # Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -28,6 +32,9 @@ alias rmf="rm -rf"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
 alias du='du -h -c' # calculate disk usage for a folder
+
+# rails aliases
+alias be='bundle exec'
 
 # Applications
 alias ios='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'

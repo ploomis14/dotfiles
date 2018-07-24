@@ -666,6 +666,14 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
     " }}}
 
+    " Ruby {{{
+        Plug 'janko-m/vim-test'
+		nmap <silent> ttn :TestNearest<CR>
+		nmap <silent> ttf :TestFile<CR>
+		let test#strategy = 'dispatch'
+		let g:test#preserve_screen = 1
+    " }}}
+
     " JavaScript {{{
         Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
         " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
