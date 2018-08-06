@@ -137,9 +137,6 @@
     compactionHeuristic = true
 [difftool]
     prompt = false
-[apply]
-    # do not warn about missing whitespace at EOF
-    whitespace = nowarn
 [core]
     excludesfile = ~/.gitignore_global
     pager = less -FXRS -x2

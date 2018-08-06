@@ -76,10 +76,9 @@ call plug#begin('~/.config/nvim/plugged')
     set mat=2 " how many tenths of a second to blink
 
     " Tab control
-    set noexpandtab " insert tabs rather than spaces for <Tab>
     set smarttab " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
     set tabstop=2 " the visible width of tabs
-    set softtabstop=2 " edit as if the tabs are 4 characters wide
+    set softtabstop=2 " edit as if the tabs are 2 characters wide
     set shiftwidth=2 " number of spaces to use for indent and unindent
     set shiftround " round indent to a multiple of 'shiftwidth'
 
@@ -368,6 +367,14 @@ call plug#begin('~/.config/nvim/plugged')
     " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
     Plug 'tpope/vim-surround'
 
+    " running unit tests {{{}
+    Plug 'janko-m/vim-test'
+        nmap <silent> t<C-n> :TestNearest<CR>
+        nmap <silent> t<C-f> :TestFile<CR>
+        let test#strategy = 'vimux'
+        let g:test#runner_commands = ['RSpec', 'Mocha']
+    " }}}
+
     " tmux integration for vim
     Plug 'benmills/vimux'
 
@@ -614,8 +621,6 @@ call plug#begin('~/.config/nvim/plugged')
 
         let g:ale_linters = {
         \   'javascript': ['eslint'],
-        \   'typescript': ['tsserver', 'tslint'],
-        \   'html': []
         \}
         let g:ale_fixers = {}
         let g:ale_fixers['javascript'] = ['prettier']
@@ -624,6 +629,10 @@ call plug#begin('~/.config/nvim/plugged')
         let g:ale_fixers['css'] = ['prettier']
         let g:ale_javascript_prettier_use_local_config = 1
         let g:ale_fix_on_save = 0
+    " }}}
+
+    " Vimux {{{
+        map <leader>vp :VimuxPromptCommand<CR>
     " }}}
 
     " UltiSnips {{{
@@ -667,11 +676,8 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " Ruby {{{
-        Plug 'janko-m/vim-test'
-		nmap <silent> ttn :TestNearest<CR>
-		nmap <silent> ttf :TestFile<CR>
-		let test#strategy = 'dispatch'
-		let g:test#preserve_screen = 1
+        let test#ruby#preserve_screen = 1
+        let test#ruby#use_binstubs = 0
     " }}}
 
     " JavaScript {{{
@@ -680,6 +686,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'moll/vim-node', { 'for': 'javascript' }
         Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
         Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+        let test#javascript#mocha#executable = 'yarn test:one:watch'
+        let test#javascript#mocha#file_pattern = 'spec.js'
     " }}}
 
     " TypeScript {{{
@@ -694,7 +702,6 @@ call plug#begin('~/.config/nvim/plugged')
         " let g:tsuquyomi_disable_default_mappings = 1
         " let g:tsuquyomi_completion_detail = 1
     " }}}
-
 
     " Styles {{{
         Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
