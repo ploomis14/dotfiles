@@ -81,6 +81,7 @@ call plug#begin('~/.config/nvim/plugged')
     set softtabstop=2 " edit as if the tabs are 2 characters wide
     set shiftwidth=2 " number of spaces to use for indent and unindent
     set shiftround " round indent to a multiple of 'shiftwidth'
+    set expandtab " make the tab key insert spaces instead of tab characters
 
     " code folding settings
     set foldmethod=syntax " fold based on indent
