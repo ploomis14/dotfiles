@@ -68,8 +68,7 @@ set-window-option -g clock-mode-colour $base0C
 tm_session_name="#[default,bg=$base0E,fg=$base01] #S "
 set -g status-left "$tm_session_name"
 
-tm_battery="#(~/.dotfiles/bin/battery_indicator.sh)"
-#tm_battery="#[fg=$base01,bg=$base09] ♥ #(battery)"
+tm_battery="#[fg=$base01,bg=$base09] ♥ #(battery)"
 tm_date="#[default,bg=$base02,fg=$base05] %R"
 tm_host="#[fg=$base01,bg=$base0E] #h "
 set -g status-right "$tm_battery $tm_date $tm_host"
