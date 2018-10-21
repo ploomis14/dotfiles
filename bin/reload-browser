@@ -7,7 +7,6 @@
 usage() {
     case $( uname ) in
     Darwin)
-        # applescript needs the exact title
         echo "Usage: $( basename "$0" ) Firefox [Safari \"Google Chrome\" ...]"
         ;;
     *)

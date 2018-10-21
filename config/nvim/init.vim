@@ -691,17 +691,8 @@ call plug#begin('~/.config/nvim/plugged')
         let test#javascript#mocha#file_pattern = 'spec.js'
     " }}}
 
-    " TypeScript {{{
-        " Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-        Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-        Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
-        Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' }
-        let g:nvim_typescript#diagnosticsEnable = 0
-        " Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
-        " let g:tsuquyomi_completion_detail = 1
-        " let g:tsuquyomi_disable_default_mappings = 1
-        " let g:tsuquyomi_completion_detail = 1
+    " Elixir {{{
+        Plug 'elixir-editors/vim-elixir'
     " }}}
 
     " Styles {{{

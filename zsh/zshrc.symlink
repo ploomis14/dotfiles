@@ -121,3 +121,7 @@ export LESS_TERMCAP_mh=$(tput dim)
 # https://github.com/koalaman/shellcheck/wiki
 #
 # export SHELLCHECK_OPTS=""
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
