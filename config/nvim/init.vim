@@ -679,6 +679,11 @@ call plug#begin('~/.config/nvim/plugged')
     " Ruby {{{
         let test#ruby#preserve_screen = 1
         let test#ruby#use_binstubs = 0
+        Plug 'ngmy/vim-rubocop'
+    " }}}
+
+    " GraphQL {{{
+        Plug 'jparise/vim-graphql'
     " }}}
 
     " JavaScript {{{
@@ -687,7 +692,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'moll/vim-node', { 'for': 'javascript' }
         Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
         Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
-        let test#javascript#mocha#executable = 'yarn test:one:watch'
+        let test#javascript#mocha#executable = "NODE_PATH = 'src' jest"
         let test#javascript#mocha#file_pattern = 'spec.js'
     " }}}
 

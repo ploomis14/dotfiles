@@ -35,6 +35,8 @@ export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/apache-maven-3.6.0/bin:$PATH
+export KAFKA_HOME=/usr/local/kafka_2.11-2.0.0
 
 # add /usr/local/sbin
 if [[ -d /usr/local/sbin ]]; then
