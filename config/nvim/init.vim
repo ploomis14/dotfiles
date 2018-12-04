@@ -497,8 +497,6 @@ call plug#begin('~/.config/nvim/plugged')
         let g:WebDevIconsUnicodeDecorateFolderNodes = 1
         let g:DevIconsEnableFoldersOpenClose = 1
         let g:DevIconsEnableFolderExtensionPatternMatching = 1
-        let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
-        let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
 
         augroup nerdtree
             autocmd!
@@ -692,8 +690,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'moll/vim-node', { 'for': 'javascript' }
         Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
         Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
-        let test#javascript#mocha#executable = "NODE_PATH = 'src' jest"
-        let test#javascript#mocha#file_pattern = 'spec.js'
+        let test#javascript#jest#executable = 'yarn test'
+        let test#javascript#jest#file_pattern = 'spec.js'
     " }}}
 
     " Elixir {{{
