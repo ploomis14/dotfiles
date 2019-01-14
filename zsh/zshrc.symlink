@@ -37,6 +37,8 @@ export GIT_EDITOR='nvim'
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/apache-maven-3.6.0/bin:$PATH
 export KAFKA_HOME=/usr/local/kafka_2.11-2.0.0
+export GOPATH=$HOME/code/go
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # add /usr/local/sbin
 if [[ -d /usr/local/sbin ]]; then
