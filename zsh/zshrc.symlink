@@ -36,7 +36,6 @@ export GIT_EDITOR='nvim'
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/apache-maven-3.6.0/bin:$PATH
-export KAFKA_HOME=/usr/local/kafka_2.11-2.0.0
 export GOPATH=$HOME/code/go
 export PATH=$PATH:$(go env GOPATH)/bin
 
@@ -51,11 +50,6 @@ export PATH=$DOTFILES/bin:$PATH
 # check for custom bin directory and add to path
 if [[ -d ~/bin ]]; then
     export PATH=~/bin:$PATH
-fi
-
-# install rbenv
-if command_exists rbenv; then
-    eval "$(rbenv init -)"
 fi
 
 # add a config file for ripgrep
@@ -75,12 +69,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-if command_exists direnv; then
-    eval "$(direnv hook zsh)"
-fi
-
 if [ -z ${RELOAD}  ]; then
-    export ZPLUG_HOME=/usr/local/opt/zplug
+    export ZPLUG_HOME=$(brew --prefix)/opt/zplug
     source $ZPLUG_HOME/init.zsh
     zplug 'zplug/zplug', hook-build:'zplug --self-manage'
     zplug 'zsh-users/zsh-syntax-highlighting', defer:2
@@ -97,10 +87,6 @@ if [ -z ${RELOAD}  ]; then
     fi
 
     zplug load
-fi
-# alias git to hub
-if command_exists hub; then
-    eval "$(hub alias -s)"
 fi
 
 # move to next word with ctrl-F
@@ -119,13 +105,3 @@ export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 7)
 export LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
 export LESS_TERMCAP_mr=$(tput rev)
 export LESS_TERMCAP_mh=$(tput dim)
-
-# add shellcheck config
-# For a full list of errors, refer to
-# https://github.com/koalaman/shellcheck/wiki
-#
-# export SHELLCHECK_OPTS=""
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash

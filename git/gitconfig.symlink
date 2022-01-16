@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-    name = Peter Loomis
-    email = peter.loomis@procore.com
+	name = Peter Loomis
+	email = loomispeter@gmail.com
 [github]
-    user = psloomis
+	user = ploomis14
 [init]
     templatedir = ~/.dotfiles/git/templates
 [alias]
