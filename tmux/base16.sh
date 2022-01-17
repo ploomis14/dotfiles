@@ -37,38 +37,23 @@ set -g status-right-length 150
 set -g status-interval 5
 
 # default statusbar colors
-set-option -g status-fg $base02
-set-option -g status-bg $base01
-set-option -g status-attr default
+set -g status-style fg=$base02,bg=$base01,default
 
-set-window-option -g window-status-fg $base04
-set-window-option -g window-status-bg $base00
-set -g window-status-format " #I #W"
+set -g window-status-style fg=$base04,bg=$base00
 
 # active window title colors
-set-window-option -g window-status-current-fg $base01
-set-window-option -g window-status-current-bg $base0C
-set-window-option -g  window-status-current-format " #[bold]#W "
+set -g window-status-current-style fg=$base01,bg=$base0C
 
 # pane border colors
-set-window-option -g pane-border-fg $base03
-set-window-option -g pane-active-border-fg $base0C
+set -g pane-border-style fg=$base03
+set -g pane-active-border-style fg=$base0C
 
 # message text
-set-option -g message-bg $base00
-set-option -g message-fg $base0C
-
-# pane number display
-set-option -g display-panes-active-colour $base0C
-set-option -g display-panes-colour $base01
-
-# clock
-set-window-option -g clock-mode-colour $base0C
+set -g mode-style fg=$base0C,bg=$base00
 
 tm_session_name="#[default,bg=$base0E,fg=$base01] #S "
 set -g status-left "$tm_session_name"
 
-tm_battery="#[fg=$base01,bg=$base09] ♥ #(battery)"
+tm_battery="#[fg=$base02,bg=$base05] ♥ #(battery)"
 tm_date="#[default,bg=$base02,fg=$base05] %R"
-tm_host="#[fg=$base01,bg=$base0E] #h "
-set -g status-right "$tm_battery $tm_date $tm_host"
+set -g status-right "$tm_battery $tm_date"
