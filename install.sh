@@ -33,4 +33,7 @@ elif ! [[ $SHELL =~ .*zsh.* ]]; then
     chsh -s "$(which zsh)"
 fi
 
+tic resources/xterm-256color-italic.terminfo
+tic resources/tmux-256color-italic.terminfo
+
 echo "Done. Reload your terminal."
