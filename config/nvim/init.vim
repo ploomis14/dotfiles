@@ -654,34 +654,6 @@ call plug#begin('~/.config/nvim/plugged')
 " }}}
 
 " Language-Specific Configuration {{{
-    " html / templates {{{
-        " emmet support for vim - easily create markdup wth CSS-like syntax
-        Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript.jsx']}
-        let g:user_emmet_settings = {
-        \  'javascript.jsx': {
-        \      'extends': 'jsx',
-        \  },
-        \}
-
-        " match tags in html, similar to paren support
-        Plug 'gregsexton/MatchTag', { 'for': 'html' }
-
-        " html5 support
-        Plug 'othree/html5.vim', { 'for': 'html' }
-
-        " mustache support
-        Plug 'mustache/vim-mustache-handlebars'
-
-        " pug / jade support
-        Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-    " }}}
-
-    " Ruby {{{
-        let test#ruby#preserve_screen = 1
-        let test#ruby#use_binstubs = 0
-        Plug 'ngmy/vim-rubocop'
-    " }}}
-
     " GraphQL {{{
         Plug 'jparise/vim-graphql'
     " }}}
@@ -696,13 +668,8 @@ call plug#begin('~/.config/nvim/plugged')
         let test#javascript#jest#file_pattern = 'spec.js'
     " }}}
 
-    " Elixir {{{
-        Plug 'elixir-editors/vim-elixir'
-    " }}}
-
     " Styles {{{
         Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
-        Plug 'groenewege/vim-less', { 'for': 'less' }
         Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
         Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
         Plug 'gko/vim-coloresque'
@@ -726,8 +693,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'fatih/vim-go', { 'for': 'go' }
     Plug 'timcharper/textile.vim', { 'for': 'textile' }
-    Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
-    Plug 'kchmck/vim-coffee-script', { 'for': 'coffeescript' }
     Plug 'nikvdp/ejs-syntax'
 " }}}
 
